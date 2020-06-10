@@ -593,6 +593,7 @@
 
 		public override void Start()
         {
+            CreateMyForm();
         	//PrintListNpcCurrentMap();
         }
         public override void Stop()
