@@ -16,7 +16,7 @@
         bool isBattleWaitting = false;
         int questStep = 0;
         bool inQuest = false;
-        private bool TalkWithNPC(string NpcName,ushort offset = 0){
+        /*private bool TalkWithNPC(string NpcName,ushort offset = 0){
             NpcInMapEntity NPCInfomation = FindNPCNoInCurrentMapByName(NpcName,offset);
             ts.Debug("Moving Close To NPC");
             ts.Move(ushort.Parse((NPCInfomation.PosX - 1).ToString()),ushort.Parse((NPCInfomation.PosY - 1).ToString()));
@@ -25,7 +25,7 @@
             ts.ClickNpc(NPCInfomation.NpcNo);
             ts.Delay(TimeDelayAction);
             return true;
-        }
+        }*/
         private void WaitBattleEnd(){
             isBattleWaitting = true;
             while (isBattleWaitting){
@@ -33,14 +33,14 @@
                 ts.Delay(5*TimeDelayAction);
             }
         }
-
+        /*
         private void ActiveEvent(ushort EventId){
             ts.Debug("Active Event " + EventId.ToString());
             ts.ActiveEvent(EventId);
             ts.Delay(TimeDelayAction);
-        }
+        }*/
 
-        private void HandlingPmapMove(ushort WarpID,ushort DestId,string DestName,bool isTeleport){
+        /*private void HandlingPmapMove(ushort WarpID,ushort DestId,string DestName,bool isTeleport){
             if (DestId != 0){
                 if (isTeleport){
                     ts.Debug("Teleporting to map " + DestName);
@@ -52,7 +52,8 @@
                     ts.Delay(TimeDelayAction);
                 }
             }
-        }
+        }*/
+
         private bool pmapFromMapToMap(ushort end, bool isTeleport =false){
             ts.Debug("Pmaping to map " + end.ToString());
             var Route = ts.pmap.Get(ts.Character.MapId, end, isTeleport);
