@@ -593,7 +593,7 @@
 
 		public override void Start()
         {
-            CreateMyForm();
+            Form newForm = new Form().CreateMyForm();
         	//PrintListNpcCurrentMap();
         }
         public override void Stop()
